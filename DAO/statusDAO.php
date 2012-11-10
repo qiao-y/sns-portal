@@ -1,25 +1,25 @@
 <?php
 require_once "common.php";
+require_once "../Models/status.php";
 
-function register_user($user_name,$email,$password)
+function get_status_by_uid($userid)
 {
-	$md5_password = md5($password);
-	$query = "INSERT INTO Users(u_name, u_email, u_password)  VALUES (:user_name,:email,:md5_password)";
-	
-	$stmt = prepare_statement($query);
+	$query = "select * from Status where u_id = " . $userid;
+	$stmt = exec_query($query);
 
-	oci_bind_by_name($stmt,":user_name",$user_name);
-	oci_bind_by_name($stmt,":email",$email);
-	oci_bind_by_name($stmt,":md5_password",$md5_password);	
+	$result = array();
 	
-	oci_execute($stmt);
-
-	$err = oci_error($stmt);
-	if ($err){
-		echo $err['message'];
+	while ($row = oci_fetch_array($stmt,OCI_ASSOC)){
+		$item = new status($row["S_ID"],$row["U_ID"],$row["S_CONTENT"],$row["S_TIMESTAMP"]);
+		array_push($result,$item);
 	}
-}
 
+	return $result;	
+}	
+
+
+$res = get_status_by_uid(42);
+var_dump($res);
 
 oci_close($conn);
 ?>

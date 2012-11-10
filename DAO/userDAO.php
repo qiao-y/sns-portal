@@ -21,6 +21,8 @@ function register_user($user_name,$email,$password)
 }
 
 
+//register_user("newuser","zizi@gmail.com","haha");
+
 oci_close($conn);
 ?>
 
