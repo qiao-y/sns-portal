@@ -8,13 +8,35 @@ if (!$conn){
 	trigger_error(htmlentities($m['message']), E_USER_ERROR);
 }
 
-
 function prepare_statement($query)
 {
     global $conn;
 	return oci_parse($conn,$query);
 }
 
+
+function exec_query($query)
+{
+    global $conn;
+    $stmt = oci_parse($conn,$query);
+	oci_execute($stmt);
+
+    $err = oci_error($stmt);
+    if ($err){
+		echo "error while exec ". $query ."<br/>";
+        echo $err['message'];
+		oci_free_statement($stmt);
+		$nrows = 0;
+		return NULL;
+    }
+
+	return $stmt;
+/*	
+	$nrows = oci_fetch_all($stmt,$res);		//rows returned
+	oci_free_statement($stmt);
+	return $res;
+*/
+}
 
 
 ?>
