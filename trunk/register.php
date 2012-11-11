@@ -12,7 +12,11 @@ if ($password != $confirm_pwd){
 }
 else {
 	register_user($name,$email,$password);
-	echo "Registration succceeded!";
+	echo "Registration succceeded. Redirecting to main page...";
+	$userid = get_user_id_by_email($email);
+	session_start();
+	$_SESSION['userid'] = $userid;
+	//add redirection here
 }	
 
 
