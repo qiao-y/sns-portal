@@ -191,8 +191,10 @@ a {
 }
 
 #page ul li {
-	border-top: solid 1px #DDD;
+/*	border-top: solid 1px #DDD; */ 
 	padding: 10px 0 10px 0;
+	margin-bottom: 0px;
+	margin-top: 0px;
 }
 
 #page ul li.first {
@@ -266,3 +268,4 @@ a {
 	border: solid 1px #82A7AD;
 	border-top: 0;
 }
+
