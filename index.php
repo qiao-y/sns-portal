@@ -29,7 +29,7 @@
 							<li>Email  <input style="color: rgb(51, 51, 51);" name="email" id="email" tabindex="1" value="" type="text" /></li>
 							<li>Password <input style="color: rgb(51, 51, 51);" name="password" id="password" tabindex="1" value="" size="17" type="password" /></li>
 						</ul>	
-						<input type='submit' name='Submit' value='Submit' />					
+						<input type='submit' name='Submit' value='Login' />					
 
 						</form>
 						</div>
@@ -44,10 +44,10 @@
 					<div class="box">
 						<form id='register' action='register.php' method='post' accept-charset='UTF-8'>
 						<ul>
-                            <li>Email: <input style="color: rgb(51, 51, 51);" name="email" id="email" tabindex="1" value="" type="text"></li>
-                            <li>Password: <input style="color: rgb(51, 51, 51);" name="password" id="password" tabindex="1" value="" type="password"></li>
-						    <li>Confirm Password: <input style="color: rgb(51, 51, 51);" name="password" id="password" tabindex="1" value="" type="password"></li>
-                            <li>Name: <input style="color: rgb(51, 51, 51);" name="password" id="password" tabindex="1" value="" type="text"></li>
+                            <li>Email: <input style="color: rgb(51, 51, 51);" name="reg_email" id="reg_email" tabindex="1" value="" type="text"></li>
+                            <li>Password: <input style="color: rgb(51, 51, 51);" name="reg_password" id="reg_password" tabindex="1" value="" type="password"></li>
+						    <li>Confirm Password: <input style="color: rgb(51, 51, 51);" name="con_password" id="con_password" tabindex="1" value="" type="password"></li>
+                            <li>Name: <input style="color: rgb(51, 51, 51);" name="name" id="name" tabindex="1" value="" type="text"></li>
 						</ul>
 				
 						<input type='submit' name='Submit' value='Register' />
