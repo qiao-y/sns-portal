@@ -6,6 +6,7 @@ require_once "../Models/blog_comments.php";
 
 function get_blog_by_uid($userid)
 {
+	global $conn;
 	// get blog body
 	$query = "select * from blog where u_id = " . $userid;
 	$stmt = exec_query($query);
@@ -16,13 +17,14 @@ function get_blog_by_uid($userid)
 		$item = new blog($row["B_ID"],$row["U_ID"],$row["B_TITLE"],$row["B_BODY"]);
 		array_push($result,$item);
 	}
-
+	oci_close($conn);
 	return $result;	
 }	
 
 
 function get_blog_comment_by_bid($bid)
 {
+	global $conn;
     $query = "select * from blog_comments where b_id = " . $bid;
     $stmt = exec_query($query);
 
@@ -32,7 +34,7 @@ function get_blog_comment_by_bid($bid)
         $item = new blog_comments($row["BC_ID"],$row["BC_USERID"],$row["BC_BODY"]);
         array_push($result,$item);
     }
-
+	oci_close($conn);
     return $result; 
 }   
 
@@ -45,6 +47,5 @@ function get_blog_comment_by_bid($bid)
 //$res = get_blog_comment_by_bid(7);
 //var_dump($res);
 
-oci_close($conn);
 ?>
 

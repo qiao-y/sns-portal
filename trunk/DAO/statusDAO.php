@@ -4,6 +4,7 @@ require_once "../Models/status.php";
 
 function get_status_by_uid($userid)
 {
+	global $conn;
 	$query = "select * from Status where u_id = " . $userid;
 	$stmt = exec_query($query);
 
@@ -13,7 +14,7 @@ function get_status_by_uid($userid)
 		$item = new status($row["S_ID"],$row["U_ID"],$row["S_CONTENT"],$row["S_TIMESTAMP"]);
 		array_push($result,$item);
 	}
-
+	oci_close($conn);
 	return $result;	
 }	
 
@@ -21,6 +22,5 @@ function get_status_by_uid($userid)
 //$res = get_status_by_uid(42);
 //var_dump($res);
 
-oci_close($conn);
 ?>
 
