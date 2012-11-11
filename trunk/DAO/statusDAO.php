@@ -18,8 +18,8 @@ function get_status_by_uid($userid)
 }	
 
 
-$res = get_status_by_uid(42);
-var_dump($res);
+//$res = get_status_by_uid(42);
+//var_dump($res);
 
 oci_close($conn);
 ?>
