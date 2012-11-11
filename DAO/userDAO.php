@@ -20,8 +20,25 @@ function register_user($user_name,$email,$password)
 	}
 }
 
+function check_password($email,$password)
+//on sucess return uid
+//on failure return -1
+{
+	
+	$md5_password = md5($password);
+	$query = sprintf("SELECT * FROM users WHERE u_email = '%s' and u_password = '%s'", $email,$md5_password);
+	$stmt = exec_query($query);
+	if (oci_fetch_all($stmt,$res) == 0){
+		return -1;
+	}
+	else{
+		return $res["U_ID"][0];		
+	}
+}
 
-//register_user("newuser","zizi@gmail.com","haha");
+
+// register_user("newuser","zizi@gmail.com","haha");
+echo check_password("zizi@gmail.com","haha");
 
 oci_close($conn);
 ?>
