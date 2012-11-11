@@ -40,9 +40,27 @@ function check_password($email,$password)
 	}
 }
 
+function get_user_id_by_email($email)
+{
+    global $conn;
+    $query = sprintf("SELECT u_id FROM users WHERE u_email = '%s'", $email);
+    $stmt = exec_query($query);
+    if (oci_fetch_all($stmt,$res) == 0){
+        oci_close($conn);
+        return -1;
+    }
+    else{
+        oci_close($conn);
+        return $res["U_ID"][0];
+    }
+
+}
+
 
 // register_user("newuser","zizi@gmail.com","haha");
 // echo check_password("zizi@gmail.com","haha");
+// echo get_user_id_by_email("qiaoyu.yu@gmail.com");
+
 
 ?>
 
