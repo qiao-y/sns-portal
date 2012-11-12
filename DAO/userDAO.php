@@ -56,11 +56,27 @@ function get_user_id_by_email($email)
 
 }
 
+function get_user_name_by_id($userid)
+{
+    global $conn;
+    $query = sprintf("SELECT u_name FROM users WHERE u_id = %d ", $userid);
+    $stmt = exec_query($query);
+    if (oci_fetch_all($stmt,$res) == 0){
+        oci_close($conn);
+        return -1;
+    }
+    else{
+        oci_close($conn);
+        return $res["U_NAME"][0];
+    }
+
+}
+
 
 // register_user("newuser","zizi@gmail.com","haha");
 // echo check_password("zizi@gmail.com","haha");
 // echo get_user_id_by_email("qiaoyu.yu@gmail.com");
-
+// echo get_user_name_by_id(41);
 
 ?>
 

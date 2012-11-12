@@ -1,6 +1,7 @@
 <?php
 require_once "common.php";
-require_once "../Models/user.php";
+$root = realpath($_SERVER["DOCUMENT_ROOT"]);
+require_once "$root/Models/user.php";
 
 
 function get_friend_list($uid)

@@ -1,6 +1,7 @@
 <?php
+$root = realpath($_SERVER["DOCUMENT_ROOT"])
 require_once "common.php";
-require_once "../Models/status.php";
+require_once "$root/Models/status.php";
 
 function get_status_by_uid($userid)
 {
