@@ -8,7 +8,8 @@ $confirm_pwd = trim($_POST['con_password']);
 $name = trim($_POST['name']);
 
 if ($password != $confirm_pwd){
-	echo "Password and the confirmation password is different!";
+	echo "Password and the confirmation password is different!\n";
+	echo '<a href="javascript: history.go(-1)">Back</a>';
 }
 else {
 	register_user($name,$email,$password);
@@ -16,7 +17,7 @@ else {
 	$userid = get_user_id_by_email($email);
 	session_start();
 	$_SESSION['userid'] = $userid;
-	//add redirection here
+	header('location:main.php');   
 }	
 
 

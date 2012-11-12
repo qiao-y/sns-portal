@@ -1,7 +1,8 @@
 <?php
 require_once "common.php";
-require_once "../Models/blog.php";
-require_once "../Models/blog_comments.php";
+$root = realpath($_SERVER["DOCUMENT_ROOT"])
+require_once "$root/Models/blog.php";
+require_once "$root/Models/blog_comments.php";
 
 
 function get_blog_by_uid($userid)
