@@ -47,47 +47,42 @@
 						</ul>
 					</div>
 				</div>
-				<?php if (isset($_GET["friendid"])){ ?>
-				<div id="content">
+				<?php if (isset($_GET["bid"])){ ?>
+	
+			<div id="content">
 					<div class="box">
-						<h2><?php $friend_id = $_GET["friendid"]; echo get_user_name_by_id($friend_id); ?> </h2>
-					</div>
+						<h2>
+							<?php 
+								require_once "DAO/blogDAO.php";
+								$blog_id = $_GET["bid"]; 
+								$blog = get_blog_by_id($blog_id);
+								echo $blog->title;
+							 ?> 
+						</h2>
+						
+						<p>
+							<?php echo $blog->body; ?> 
+						</p>
+					 <br class="clearfix" />
+                </div>
+                <br class="clearfix" />
 
-
-					<!-- BLOG -->
-
-					<div class="box">
-						<h3>Blog</h3>
-						<?php	
-							require_once "DAO/blogDAO.php";
-							$blog_list = get_blog_list_by_uid($friend_id);
-							for ($i = 0 ; $i < count($blog_list) ; ++$i){
-							?>
-							<a href="readblog.php?bid=<?php echo $blog_list[$i]->bid; ?>"><?php echo $blog_list[$i]->title; ?></a>	<br/>	
-						<?php	
-							} 					
-						?>	
-					</div>
-
-
-					<!-- STATUS -->
-
-					<div class="box">
-						<h3>Status</h3>
-                        <?php                   
-                            require_once "DAO/statusDAO.php";
-                            $status_list = get_status_by_uid($friend_id);
-                            for ($i = 0 ; $i < count($status_list) ; ++$i){
-                            ?>      
-                            <?php echo $status_list[$i]->timestamp . ": " . $status_list[$i]->content; ?> <br/>   
-                        <?php 
-                            }                   
-                        ?>  
-					</div>
-					<br class="clearfix" />
-				</div>
-				<br class="clearfix" />
+             <div class="box">
+                  <h3>Comments</h3>
+                     <?php
+                            $blog_comment_list = get_blog_comment_by_bid($blog_id);
+                            for ($i = 0 ; $i < count($blog_comment_list) ; ++$i){
+                    ?>
+                        	<p><?php echo $blog_comment_list[$i]->body; ?></p>
+							
+					<?php
+                            }
+                    ?>
 			</div>
+
+		</div>
+
+
             <div id="page-bottom">
                 <div id="page-bottom-content">
                     <h3>Acknowledgement</h3>
