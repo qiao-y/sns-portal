@@ -1,5 +1,5 @@
 <?php
-$root = realpath($_SERVER["DOCUMENT_ROOT"])
+$root = realpath($_SERVER["DOCUMENT_ROOT"]);
 require_once "common.php";
 require_once "$root/Models/status.php";
 

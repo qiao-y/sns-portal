@@ -8,7 +8,7 @@ $confirm_pwd = trim($_POST['con_password']);
 $name = trim($_POST['name']);
 
 if ($password != $confirm_pwd){
-	echo "Password and the confirmation password is different!\n";
+	echo "Password and the confirmation password is different!<br/>";
 	echo '<a href="javascript: history.go(-1)">Back</a>';
 }
 else {

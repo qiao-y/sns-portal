@@ -40,32 +40,43 @@
 							$friend_list = get_friend_list($userid);
 							for ($i = 0 ; $i < count($friend_list) ; ++$i){
 						?>	
-							<li><a href="#"><?php echo $friend_list[$i]->uname ?></a></li>	
+							<li><a href="main.php?friendid=<?php echo $friend_list[$i]->userID ?>"><?php echo $friend_list[$i]->uname ?></a></li>	
 						<?php
 							}	
 						?>
 						</ul>
 					</div>
 				</div>
+				<?php if (isset($_GET["friendid"])){ ?>
 				<div id="content">
 					<div class="box">
-						<h2>Welcome to Accumen</h2>
-						<img class="alignleft" src="images/pic01.jpg" width="200" height="180" alt="" />
-						<p>
-							This is <strong>Accumen</strong>, a free, fully standards-compliant CSS template by <a href="http://www.freecsstemplates.org/">Free CSS Templates</a>. The images used in this template are from <a href="http://fotogrph.com/">Fotogrph</a>. This free template is released under a <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attributions 3.0</a> license, so you are pretty much free to do whatever you want with it (even use it commercially) provided you keep the footer credits intact. Aside from that, have fun with it :)
-						</p>
+						<h2><?php $friend_id = $_GET["friendid"]; echo get_user_name_by_id($friend_id); ?> </h2>
 					</div>
 					<div class="box">
-						<h3>Nullam curae integer</h3>
-						<p>
-							Congue quam posuere elit adipiscing varius tellus. Consequat porttitor dolor sed viverra cum congue. Varius primis auctor est nisl at mi quam. Ante libero arcu ridiculus blandit placerat. Sociis in consequat suscipit felis vivamus odio phasellus. Elementum pellentesque vestibulum gravida morbi turpis ante nullam. Pellentesque placerat porta ipsum.
-						</p>
+						<!--  BLOG  -->
+						<h3>Blog</h3>
+						<?php	
+							require_once "DAO/blogDAO.php";
+							$blog_list = get_blog_by_uid($friend_id);
+							for ($i = 0 ; $i < count($blog_list) ; ++$i){
+							?>
+							<a href="readblog.php?bid=<?php echo $blog_list[$i]->bid; ?>"><?php echo $blog_list[$i]->title; ?></a>	<br/>	
+						<?php	
+							} 					
+						?>	
 					</div>
 					<div class="box">
-						<h3>Accumsan euismod gravida pellentesque</h3>
-						<p>
-							Sociis dictum mauris ultricies suspendisse in quisque. Massa non morbi magna eget. Cubilia aliquet duis sapien ac nascetur fringilla ullamcorper. Auctor est odio rhoncus pharetra purus mattis. Ultrices vulputate lacus ridiculus imperdiet cursus. Tellus ridiculus morbi fringilla volutpat mi magna aliquam.
-						</p>
+						<!-- STATUS -->
+						<h3>Status</h3>
+                        <?php                   
+                            require_once "DAO/statusDAO.php";
+                            $status_list = get_status_by_uid($friend_id);
+                            for ($i = 0 ; $i < count($status_list) ; ++$i){
+                            ?>      
+                            <?php echo $status_list[$i]->timestamp . " : " . $status_list[$i]->content; ?> <br/>   
+                        <?php 
+                            }                   
+                        ?>  
 					</div>
 					<br class="clearfix" />
 				</div>
@@ -81,6 +92,9 @@
                 <br class="clearfix" />
             </div>
         </div>
+	
+		<?php  } ?>
+		
         <div id="footer">
             &copy; 2012 SNS Portal | Design by Yu Qiao (yq2145) and Cheng Xiang (cx2142) </a>
         </div>
