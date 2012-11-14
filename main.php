@@ -73,7 +73,7 @@
                             $status_list = get_status_by_uid($friend_id);
                             for ($i = 0 ; $i < count($status_list) ; ++$i){
                             ?>      
-                            <?php echo $status_list[$i]->timestamp . " : " . $status_list[$i]->content; ?> <br/>   
+                            <?php echo $status_list[$i]->timestamp . ": " . $status_list[$i]->content; ?> <br/>   
                         <?php 
                             }                   
                         ?>  
