@@ -10,14 +10,15 @@ class blog
 	public $uid;
 	public $title;
 	public $body;
+	public $timestamp;
 	//public $comments;
 
-	function __construct($bid,$uid,$title,$body){
+	function __construct($bid,$uid,$title,$body,$timestamp){
 		$this->bid = $bid;
 		$this->uid = $uid;
 		$this->title = $title;
 		$this->body = $body;
-		$comments = array();
+		$this->timestamp = $timestamp;
 	}
 	
 /*	function add_comments($comments){

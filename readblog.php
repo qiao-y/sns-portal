@@ -82,7 +82,7 @@
 								?>
 								<a href="main.php?friendid=<?php echo $blog_comment_list[$i]->uid; ?>"><?php echo $commenter; ?></a>
 								<?php
-								echo  $date . ":" . $content;  
+								echo  $date . ": " . $content;  
 								?>
 								</strong>
 							</p>
