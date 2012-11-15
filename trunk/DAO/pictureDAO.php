@@ -13,7 +13,11 @@ function get_picture_list_by_uid($userid)
 	$result = array();
 	
 	while ($row = oci_fetch_array($stmt,OCI_ASSOC)){
-		$item = new picture($row["P_ID"],$row["P_BODY_LINK"],$row["U_ID"],$row["P_TIMESTAMP"]);
+		$desc = "";
+		if (isset($row["P_DESCRIPTION"])){
+			$desc = $row["P_DESCRIPTION"];
+		}
+		$item = new picture($row["P_ID"],$row["P_BODY_LINK"],$row["U_ID"],$row["P_TIMESTAMP"],$desc);
 
 		array_push($result,$item);
 	}
@@ -22,7 +26,7 @@ function get_picture_list_by_uid($userid)
 }	
 
 
-//var_dump (get_picture_list_by_uid(41));
+//var_dump (get_picture_list_by_uid(48));
 
 
 ?>

@@ -115,6 +115,7 @@
                         ?> 
 							<div class="img"> 
 							<a href="<?php echo $picture_list[$i]->link ?>"><img src="<?php echo $picture_list[$i]->link ?>"alt="NULL" width="110" height="90"></a>
+						 <div class="desc"><?php echo $picture_list[$i]->desc ?></div>
 							</div>
                         <?php
                             }
