@@ -104,6 +104,24 @@
 
 
 
+                    <!-- PICTURES -->
+
+                    <div class="box">
+                        <h3>Pictures</h3>
+                        <?php
+                            require_once "DAO/pictureDAO.php";
+                            $picture_list = get_picture_list_by_uid($friend_id);
+                            for ($i = 0 ; $i < count($picture_list) ; ++$i){
+                        ?> 
+							<div class="img"> 
+							<a href="<?php echo $picture_list[$i]->link ?>"><img src="<?php echo $picture_list[$i]->link ?>"alt="NULL" width="110" height="90"></a>
+							</div>
+                        <?php
+                            }
+                        ?>
+                    </div>
+
+
                     <br class="clearfix" />
                 </div>
 				<br class="clearfix" />
