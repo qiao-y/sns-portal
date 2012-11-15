@@ -73,7 +73,19 @@
                             $blog_comment_list = get_blog_comment_by_bid($blog_id);
                             for ($i = 0 ; $i < count($blog_comment_list) ; ++$i){
                     ?>
-                        	<p><?php echo $blog_comment_list[$i]->body; ?></p>
+                        	<p>
+								<strong>
+								<?php
+								$commenter = get_user_name_by_id($blog_comment_list[$i]->uid); 
+								$date = $blog_comment_list[$i]->date; 
+								$content = $blog_comment_list[$i]->body; 
+								?>
+								<a href="main.php?friendid=<?php echo $blog_comment_list[$i]->uid; ?>"><?php echo $commenter; ?></a>
+								<?php
+								echo  $date . ":" . $content;  
+								?>
+								</strong>
+							</p>
 							
 					<?php
                             }

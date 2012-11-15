@@ -46,7 +46,7 @@ function get_blog_comment_by_bid($bid)
     $result = array();
     
     while ($row = oci_fetch_array($stmt,OCI_ASSOC)){
-        $item = new blog_comments($row["BC_ID"],$row["BC_USERID"],$row["BC_BODY"]);
+        $item = new blog_comments($row["BC_ID"],$row["BC_USERID"],$row["BC_BODY"],$row["BC_DATE"]);
         array_push($result,$item);
     }
 	oci_close($conn);
