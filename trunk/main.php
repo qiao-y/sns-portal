@@ -15,7 +15,10 @@
 					<h1><a href="main.php">SNS Portal</a></h1>
 				</div>
 				<div id="menu">
-					<ul>
+					<form id='search' action='search.php' method='post' accept-charset='UTF-8'>
+						<ul><li><input name="searchKeyword" id="searchKeyword" tabindex="1" value="" type="text"/><input type='submit' name='Submit' value='Search Friend' /></li></ul>
+						<ul>
+					</form>
 					<li>Welcome 
 						<?php
 							require_once "DAO/userDAO.php";

@@ -1,5 +1,8 @@
 <?php
 require_once "common.php";
+$root = realpath($_SERVER["DOCUMENT_ROOT"]);
+require_once "$root/Models/user.php";
+
 
 function register_user($user_name,$email,$password)
 {
@@ -72,11 +75,31 @@ function get_user_name_by_id($userid)
 
 }
 
+function search_user($keyword)
+{
+	global $conn;
+
+    $query = sprintf("SELECT * FROM users WHERE u_name like '%%%s%%' or u_email like '%%%s%%'",$keyword,$keyword); 
+	$stmt = exec_query($query);
+
+    $result = array();
+
+    while ($row = oci_fetch_array($stmt,OCI_ASSOC)){
+        $item = new user($row["U_ID"],$row["U_EMAIL"],$row["U_LASTLOGINTIME"],$row["U_NAME"]);
+        array_push($result,$item);
+    }
+    oci_close($conn);
+    return $result;
+}
+
+
 
 // register_user("newuser","zizi@gmail.com","haha");
 // echo check_password("zizi@gmail.com","haha");
 // echo get_user_id_by_email("qiaoyu.yu@gmail.com");
 // echo get_user_name_by_id(41);
+// echo var_dump(search_user("qiao"));
+
 
 ?>
 
