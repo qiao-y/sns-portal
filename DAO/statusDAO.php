@@ -6,7 +6,7 @@ require_once "$root/Models/status.php";
 function get_status_by_uid($userid)
 {
 	global $conn;
-	$query = "select * from Status where u_id = " . $userid;
+	$query = "select * from Status where u_id = " . $userid . "order by s_timestamp";
 	$stmt = exec_query($query);
 
 	$result = array();
