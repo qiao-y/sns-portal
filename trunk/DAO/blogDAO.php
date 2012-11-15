@@ -9,13 +9,13 @@ function get_blog_list_by_uid($userid)
 {
 	global $conn;
 	// get blog body
-	$query = "select * from blog where u_id = " . $userid;
+	$query = "select * from blog where u_id = " . $userid . "order by b_timestamp desc";
 	$stmt = exec_query($query);
 
 	$result = array();
 	
 	while ($row = oci_fetch_array($stmt,OCI_ASSOC)){
-		$item = new blog($row["B_ID"],$row["U_ID"],$row["B_TITLE"],$row["B_BODY"]);
+		$item = new blog($row["B_ID"],$row["U_ID"],$row["B_TITLE"],$row["B_BODY"],$row["B_TIMESTAMP"]);
 		array_push($result,$item);
 	}
 	oci_close($conn);
@@ -30,9 +30,23 @@ function get_blog_by_id($bid)
     $stmt = exec_query($query);
 
     $row = oci_fetch_array($stmt,OCI_ASSOC);
-    $result = new blog($row["B_ID"],$row["U_ID"],$row["B_TITLE"],$row["B_BODY"]);
+    $result = new blog($row["B_ID"],$row["U_ID"],$row["B_TITLE"],$row["B_BODY"],$row["B_TIMESTAMP"]);
     oci_close($conn);
     return $result;
+}
+
+
+function get_blog_title_by_id($bid)
+{
+    global $conn;
+    // get blog body
+    $query = "select b_title from blog where b_id = " . $bid;
+    $stmt = exec_query($query);
+
+    $row = oci_fetch_array($stmt,OCI_ASSOC);
+  //  $result = ($row["B_ID"],$row["U_ID"],$row["B_TITLE"],$row["B_BODY"]);
+    oci_close($conn);
+    return $row["B_TITLE"];
 }
 
 

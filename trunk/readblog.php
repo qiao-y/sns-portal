@@ -56,7 +56,7 @@
 								require_once "DAO/blogDAO.php";
 								$blog_id = $_GET["bid"]; 
 								$blog = get_blog_by_id($blog_id);
-								echo $blog->title;
+								echo $blog->title . "<br />" . $blog->timestamp;
 							 ?> 
 						</h2>
 						

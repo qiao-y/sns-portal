@@ -21,7 +21,8 @@
 							require_once "DAO/userDAO.php";
 							session_start(); 
 							$userid = $_SESSION['userid'];
-							echo get_user_name_by_id($userid); 
+							$username = get_user_name_by_id($userid);
+							echo $username; 
 						?> 
 					</li>
 					<li><a href="logout.php">Log Out</a></li>
@@ -50,7 +51,7 @@
 				<?php if (isset($_GET["friendid"])){ ?>
 				<div id="content">
 					<div class="box">
-						<h2><?php $friend_id = $_GET["friendid"]; echo get_user_name_by_id($friend_id); ?> </h2>
+						<h2><?php $friend_id = $_GET["friendid"]; $friendname = get_user_name_by_id($friend_id); echo $friendname; ?> </h2>
 					</div>
 
 
@@ -84,10 +85,30 @@
                             }                   
                         ?>  
 					</div>
-					<br class="clearfix" />
-				</div>
+				
+                    <!-- LIKE BLOG -->
+
+                    <div class="box">
+                        <h3>Like Blog</h3>
+                        <?php
+                            require_once "DAO/likeDAO.php";
+                            $like_blog_list = get_like_blog_by_uid($friend_id);
+                            for ($i = 0 ; $i < count($like_blog_list) ; ++$i){
+                            ?>
+                            <?php echo $friendname . " LIKED "?>
+							<a href="readblog.php?bid=<?php echo $like_blog_list[$i]->bid ?>"><?php echo $like_blog_list[$i]->btitle; ?></a> at <?php echo $like_blog_list[$i]->timestamp; ?><br/>
+                        <?php
+                            }
+                        ?>
+                    </div>
+
+
+
+                    <br class="clearfix" />
+                </div>
 				<br class="clearfix" />
-			</div>
+				</div>
+
             <div id="page-bottom">
                 <div id="page-bottom-content">
                     <h3>Acknowledgement</h3>
