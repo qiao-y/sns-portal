@@ -15,13 +15,17 @@
 					<h1><a href="main.php">SNS Portal</a></h1>
 				</div>
 				<div id="menu">
-					<ul>
+					<form id='search' action='search.php' method='post' accept-charset='UTF-8'>
+						<ul><li><input name="searchKeyword" id="searchKeyword" tabindex="1" value="" type="text"/><input type='submit' name='Submit' value='Search Friend' /></li></ul>
+						<ul>
+					</form>
 					<li>Welcome 
 						<?php
 							require_once "DAO/userDAO.php";
 							session_start(); 
 							$userid = $_SESSION['userid'];
-							echo get_user_name_by_id($userid); 
+							$username = get_user_name_by_id($userid);
+							echo $username; 
 						?> 
 					</li>
 					<li><a href="logout.php">Log Out</a></li>
@@ -47,79 +51,56 @@
 						</ul>
 					</div>
 				</div>
-				<?php if (isset($_GET["bid"])){ ?>
-	
-			<div id="content">
+				<?php if (isset($_GET["friendid"])){ ?>
+				<div id="content">
 					<div class="box">
-						<h2>
-							<?php 
-								require_once "DAO/blogDAO.php";
-								$blog_id = $_GET["bid"]; 
-								$blog = get_blog_by_id($blog_id);
-								echo $blog->title . "<br />" . $blog->timestamp;
-							 ?> 
-						</h2>
-						
-						<p>
-							<?php echo $blog->body; ?> 
-						</p>
-					 <br class="clearfix" />
-                </div>
-                <br class="clearfix" />
+						<h2><?php $friend_id = $_GET["friendid"]; $friendname = get_user_name_by_id($friend_id); echo $friendname; ?> </h2>
+					</div>
 
 
-             <div class="box">
+					<!-- STATUS -->
+
+					<div class="box">
+						<h3>Status</h3>
+                        <?php                   
+                            require_once "DAO/statusDAO.php";
+                            $status = get_status_by_sid($_GET['sid']);
+                            echo $status->timestamp . ": <strong>" . $status->content . "<strong/><br/>";   
+                        ?>  
+					</div>
+			
+
+				 <!-- LIKE -->
+	             <div class="box">
                   <h3>Like</h3>
                      <?php
-							require_once "DAO/likeDAO.php";
-                            $blog_like_list = get_like_blog_users_by_bid($blog_id);
-                            $like_count = count($blog_like_list);
-							if ($like_count == 0){
-								echo "No one likes this blog <br/>";
-							}
-							else{
-								for ($i = 0 ; $i < count($blog_like_list) - 1 ; ++$i){
-									echo $blog_like_list[$i]->uname . ", " ;	
-								}
-								echo $blog_like_list[$i]->uname . " liked this blog <br/> ";
+                            require_once "DAO/likeDAO.php";
+                            $status_like_list = get_like_status_users_by_sid($_GET['sid']);
+                            $like_count = count($status_like_list);
+                            if ($like_count == 0){
+                                echo "No one likes this status <br/>";
+                            }
+                            else{
+                                for ($i = 0 ; $i < count($status_like_list) - 1 ; ++$i){
+                                    echo $status_like_list[$i]->uname . ", " ;
+                                }
+                                echo $status_like_list[$i]->uname . " liked this status <br/> ";
 
-							}
-							
-					?>
+                            }
+
+                    ?>
 
             </div>
+				
+
+	
 
 
-             <div class="box">
-                  <h3>Comments</h3>
-                     <?php
-                            $blog_comment_list = get_blog_comment_by_bid($blog_id);
-                            for ($i = 0 ; $i < count($blog_comment_list) ; ++$i){
-                    ?>
-                        	<p>
-								<strong>
-								<?php
-								$commenter = get_user_name_by_id($blog_comment_list[$i]->uid); 
-								$date = $blog_comment_list[$i]->date; 
-								$content = $blog_comment_list[$i]->body; 
-								?>
-								<a href="main.php?friendid=<?php echo $blog_comment_list[$i]->uid; ?>"><?php echo $commenter; ?></a>
-								<?php
-								echo  $date . ": " . $content;  
-								?>
-								</strong>
-							</p>
-							
-					<?php
-                            }
-                    ?>
-			</div>
-
-                    <br class="clearfix" />
-                </div>
+	
                 <br class="clearfix" />
                 </div>
-
+				<br class="clearfix" />
+				</div>
 
             <div id="page-bottom">
                 <div id="page-bottom-content">

@@ -25,9 +25,31 @@ function get_picture_list_by_uid($userid)
 	return $result;	
 }	
 
+function get_picture_by_pid($pid)
+{   
+    global $conn;
+    $query = "select * from pictures where p_id = " . $pid . "order by p_timestamp desc";
+
+    $stmt = exec_query($query);
+
+    $row = oci_fetch_array($stmt,OCI_ASSOC);
+	$desc = "";
+    if (isset($row["P_DESCRIPTION"])){
+		$desc = $row["P_DESCRIPTION"];
+    }
+
+	$result = new picture($row["P_ID"],$row["P_BODY_LINK"],$row["U_ID"],$row["P_TIMESTAMP"],$desc);
+
+    oci_close($conn);
+    return $result;
+}
+
+
+
+
 
 //var_dump (get_picture_list_by_uid(48));
-
+//var_dump(get_picture_by_pid(14));
 
 ?>
 
