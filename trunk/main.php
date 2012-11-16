@@ -96,6 +96,19 @@
 -->
 
 
+                    <!-- SHARING -->
+
+                    <div class="box">
+                      <h3>Sharings</h3>
+                        <?php
+                            require_once "DAO/sharingDAO.php";
+                            $picture_list = get_sharing_list_by_uid($friend_id);
+                            for ($i = 0 ; $i < count($picture_list) ; ++$i){
+                                echo output_sharing($picture_list[$i],$friend_id);
+                            }
+                        ?>
+                    </div>
+
 
                     <!-- PICTURES -->
 
@@ -114,9 +127,8 @@
                             }
                         ?>
                     </div>
-
-
-                <br class="clearfix" />
+                
+				<br class="clearfix" />
                 </div>
 				<br class="clearfix" />
 				</div>

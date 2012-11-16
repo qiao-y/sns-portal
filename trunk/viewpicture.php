@@ -61,7 +61,7 @@
 					<!-- STATUS -->
 
 					<div class="box">
-						<h3>Status</h3>
+						<h3>PICTURE</h3>
                         <?php                   
                             require_once "DAO/pictureDAO.php";
                             $picture = get_picture_by_pid($_GET['pid']);
