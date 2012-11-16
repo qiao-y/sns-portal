@@ -67,7 +67,7 @@
 							$blog_list = get_blog_list_by_uid($friend_id);
 							for ($i = 0 ; $i < count($blog_list) ; ++$i){
 							?>
-							<a href="readblog.php?bid=<?php echo $blog_list[$i]->bid; ?>"><?php echo $blog_list[$i]->title; ?></a>	<br/>	
+							<a href="readblog.php?bid=<?php echo $blog_list[$i]->bid; ?>"><?php echo $blog_list[$i]->title; ?></a>  <br/>
 						<?php	
 							} 					
 						?>	
@@ -83,27 +83,17 @@
                             $status_list = get_status_by_uid($friend_id);
                             for ($i = 0 ; $i < count($status_list) ; ++$i){
                             ?>      
-                            <?php echo $status_list[$i]->timestamp . ": " . $status_list[$i]->content; ?> <br/>   
+                            <a href="status.php?friendid=<?php echo $friend_id ?>&sid=<?php echo $status_list[$i]->sid ?>"><?php echo $status_list[$i]->content; ?></a> <br/>
                         <?php 
                             }                   
                         ?>  
 					</div>
 				
                     <!-- LIKE BLOG -->
-
+<!--
                     <div class="box">
                         <h3>Like Blog</h3>
-                        <?php
-                            require_once "DAO/likeDAO.php";
-                            $like_blog_list = get_like_blog_by_uid($friend_id);
-                            for ($i = 0 ; $i < count($like_blog_list) ; ++$i){
-                            ?>
-                            <?php echo $friendname . " LIKED "?>
-							<a href="readblog.php?bid=<?php echo $like_blog_list[$i]->bid ?>"><?php echo $like_blog_list[$i]->btitle; ?></a> at <?php echo $like_blog_list[$i]->timestamp; ?><br/>
-                        <?php
-                            }
-                        ?>
-                    </div>
+-->
 
 
 
@@ -117,7 +107,7 @@
                             for ($i = 0 ; $i < count($picture_list) ; ++$i){
                         ?> 
 							<div class="img"> 
-							<a href="<?php echo $picture_list[$i]->link ?>"><img src="<?php echo $picture_list[$i]->link ?>"alt="NULL" width="110" height="90"></a>
+							<a href="viewpicture.php?friendid=<?php echo $friend_id ?>&pid=<?php echo $picture_list[$i]->pid ?>"><img src="<?php echo $picture_list[$i]->link ?>"alt="NULL" width="110" height="90"></a>
 						 <div class="desc"><?php echo $picture_list[$i]->desc ?></div>
 							</div>
                         <?php
@@ -126,7 +116,7 @@
                     </div>
 
 
-                    <br class="clearfix" />
+                <br class="clearfix" />
                 </div>
 				<br class="clearfix" />
 				</div>
