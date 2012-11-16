@@ -11,10 +11,15 @@ else {
 ?>
 	<ul class="list">
 	<?php
-	
-	for ($i = 0; $i < count($user_list) ; ++$i){
+	$length = count($user_list);
+	if ($length == 0){
+		echo "No match results.";
+		return;
+	}
+
+	for ($i = 0; $i < $length ; ++$i){
 	?>
-	<li><?php echo $user_list[$i]->uname; ?> Add you to his friend list </li>
+	<li><?php echo $user_list[$i]->uname; ?> <a href="addfriend.php?uid=<?php echo $user_list[$i]->userID; ?>">Add you to his/her friend list</a></li>
 	<?php 
 	}
 	?>
