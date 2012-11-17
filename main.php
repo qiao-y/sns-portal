@@ -15,25 +15,25 @@
 					<h1><a href="main.php">SNS Portal</a></h1>
 				</div>
 				<div id="menu">
-					<form id='search' action='search.php' method='post' accept-charset='UTF-8'>
-						<ul><li><input name="searchKeyword" id="searchKeyword" tabindex="1" value="" type="text"/><input type='submit' name='Submit' value='Search Friend' /></li></ul>
-						<ul>
-					</form>
-					<li>Welcome 
-						<?php
-							require_once "DAO/userDAO.php";
-							session_start(); 
-							$userid = $_SESSION['userid'];
-							$username = get_user_name_by_id($userid);
-							echo $username; 
-						?> 
-					</li>
-					<li><a href="logout.php">Log Out</a></li>
-					</ul>
-					<br class="clearfix" />
-				</div>
-			</div>
-			<div id="page">
+                	<form id='search' action='search.php' method='post' accept-charset='UTF-8'>
+                    	<ul><li><input name="searchKeyword" id="searchKeyword" tabindex="1" value="" type="text"/><input type='submit' name='Submit' value='Search Friend' /></li></ul>
+                    </form>
+					<ul>
+						<li>Welcome 
+                        <?php
+                            require_once "DAO/userDAO.php";
+                            session_start(); 
+                            $userid = $_SESSION['userid'];
+                            $username = get_user_name_by_id($userid);
+                            echo $username; 
+                        ?> 
+                        </li>
+                        <li><a href="logout.php">Log Out</a></li>
+                    </ul>
+                    <br class="clearfix" />
+                  </div>
+        </div>	
+		<div id="page">
 				<div id="sidebar">
 					<div class="box">
 						<h3>Friend List</h3>
@@ -67,7 +67,7 @@
 							$blog_list = get_blog_list_by_uid($friend_id);
 							for ($i = 0 ; $i < count($blog_list) ; ++$i){
 							?>
-							<a href="readblog.php?bid=<?php echo $blog_list[$i]->bid; ?>"><?php echo $blog_list[$i]->title; ?></a>  <br/>
+							<a href="readblog.php?bid=<?php echo $blog_list[$i]->bid; ?>"style="background-color:rgb(56,69,138)"><?php echo $blog_list[$i]->title; ?></a>  <br/>
 						<?php	
 							} 					
 						?>	
@@ -83,11 +83,28 @@
                             $status_list = get_status_by_uid($friend_id);
                             for ($i = 0 ; $i < count($status_list) ; ++$i){
                             ?>      
-                            <a href="status.php?friendid=<?php echo $friend_id ?>&sid=<?php echo $status_list[$i]->sid ?>"><?php echo $status_list[$i]->content; ?></a> <br/>
+                            <a href="status.php?friendid=<?php echo $friend_id ?>&sid=<?php echo $status_list[$i]->sid ?>"style="background-color:rgb(56,69,138)"><?php echo $status_list[$i]->content; ?></a> <br/>
                         <?php 
                             }                   
                         ?>  
 					</div>
+
+
+					<!-- TWEET -->
+                    <div class="box">
+                        <h3>Tweet</h3>
+                        <?php
+                            require_once "DAO/tweetDAO.php";
+                            $tweet_list = get_tweet_by_uid($friend_id);
+                            for ($i = 0 ; $i < count($tweet_list) ; ++$i){
+                            ?>
+                            <a href="tweet.php?friendid=<?php echo $friend_id ?>&tid=<?php echo $tweet_list[$i]->sid ?>"  style=\"background-color:rgb(128,179,212)\"  ><?php echo $tweet_list[$i]->content; ?></a> <br/>
+                        <?php
+                            }
+                        ?>
+                    </div>
+
+
 				
                     <!-- LIKE BLOG -->
 <!--
@@ -127,7 +144,7 @@
                             }
                         ?>
                     </div>
-                
+ 
 				<br class="clearfix" />
                 </div>
 				<br class="clearfix" />
