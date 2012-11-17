@@ -23,6 +23,19 @@ function get_friend_list($uid)
 }
 
 
+function is_friend($uid1,$uid2)
+{
+	global $conn;
+	$query = "select 1 from user_friend where u_id1=$uid1 and u_id2=$uid2";
+
+    $stmt = exec_query($query);
+    $result = oci_fetch_all($stmt,$res);
+    oci_close($conn);
+	return ($result == 1);
+}
+
+
+
 function add_friend($uid1,$uid2)
 {
 	global $conn;
@@ -40,4 +53,5 @@ function add_friend($uid1,$uid2)
 // var_dump(get_friend_list(48));
 
 // add_friend(41,49);
+
 ?>

@@ -12,7 +12,7 @@ function get_tweet_by_uid($userid)
 	$result = array();
 	
 	while ($row = oci_fetch_array($stmt,OCI_ASSOC)){
-		$item = new status($row["T_ID"],$row["U_ID"],$row["S_CONTENT"],$row["S_TIMESTAMP"]);
+		$item = new status($row["T_ID"],$row["U_ID"],$row["T_CONTENT"],$row["T_TIMESTAMP"]);
 		array_push($result,$item);
 	}
 	oci_close($conn);
@@ -23,13 +23,13 @@ function get_tweet_by_uid($userid)
 function get_tweet_by_tid($tid)
 {
     global $conn;
-    $query = "select * from tweet where s_id = " . $tid . "order by t_timestamp";
+    $query = "select * from tweet where t_id = " . $tid . "order by t_timestamp";
     
     $stmt = exec_query($query);
 
     $row = oci_fetch_array($stmt,OCI_ASSOC);
 
-	$result = new status($row["T_ID"],$row["U_ID"],$row["S_CONTENT"],$row["S_TIMESTAMP"]);
+	$result = new status($row["T_ID"],$row["U_ID"],$row["T_CONTENT"],$row["T_TIMESTAMP"]);
 
 	oci_close($conn);
     return $result;
