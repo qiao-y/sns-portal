@@ -103,7 +103,7 @@
                             $tweet_list = get_tweet_by_uid($friend_id);
                             for ($i = 0 ; $i < count($tweet_list) ; ++$i){
                             ?>
-                            <a href="tweet.php?friendid=<?php echo $friend_id ?>&tid=<?php echo $tweet_list[$i]->sid ?>" style="background-color:rgb(128,179,212)"><?php echo $tweet_list[$i]->content; ?></a> <br/>
+                            <font style="background-color:rgb(128,179,212)"><?php echo $tweet_list[$i]->content; ?></font> 
                         <?php
                             }
                         ?>
