@@ -51,12 +51,17 @@
 						</ul>
 					</div>
 				</div>
-				<?php if (isset($_GET["friendid"])){ ?>
+				<?php if (isset($_GET["friendid"])){ ?>	
 				<div id="content">
 					<div class="box">
 						<h2><?php $friend_id = $_GET["friendid"]; $friendname = get_user_name_by_id($friend_id); echo $friendname; ?> </h2>
 					</div>
-
+					<?php 
+						if (!is_friend($userid,$friend_id)){
+							echo "You cannot view this page as he/she is not your friend. <br/>";
+							return;
+						}
+					?>
 
 					<!-- BLOG -->
 
@@ -98,7 +103,7 @@
                             $tweet_list = get_tweet_by_uid($friend_id);
                             for ($i = 0 ; $i < count($tweet_list) ; ++$i){
                             ?>
-                            <a href="tweet.php?friendid=<?php echo $friend_id ?>&tid=<?php echo $tweet_list[$i]->sid ?>"  style=\"background-color:rgb(128,179,212)\"  ><?php echo $tweet_list[$i]->content; ?></a> <br/>
+                            <a href="tweet.php?friendid=<?php echo $friend_id ?>&tid=<?php echo $tweet_list[$i]->sid ?>" style="background-color:rgb(128,179,212)"><?php echo $tweet_list[$i]->content; ?></a> <br/>
                         <?php
                             }
                         ?>
