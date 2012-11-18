@@ -68,6 +68,19 @@ function get_blog_comment_by_bid($bid)
 }   
 
 
+function insert_blog($b_id,$u_id,$b_title,$b_body,$b_timestamp)
+{
+	global $conn;
+	$query = "insert into blog (b_id,u_id,b_title,b_body) values ($b_id,$u_id,'$b_title','$b_body')";
+	$stmt = prepare_statement($query);
+	oci_execute($stmt);
+	$err = oci_error($stmt);
+	if ($err){
+		echo $err['message'];
+	}			
+	oci_close($conn);
+}
+
 
 
 //$res = get_blog_by_uid(46);
@@ -75,6 +88,9 @@ function get_blog_comment_by_bid($bid)
 
 //$res = get_blog_comment_by_bid(7);
 //var_dump($res);
+
+//insert_blog(101,41,"test","testbody",123);
+
 
 ?>
 

@@ -35,6 +35,22 @@ function get_tweet_by_tid($tid)
     return $result;
 }   
 
+function insert_tweet($t_id,$t_content,$t_timestamp,$u_id)
+{
+    global $conn;
+    $query = "insert into tweet (t_id,t_content,t_timestamp,u_id) values ($t_id,'$t_content','$t_timestamp',$u_id)";
+    $stmt = prepare_statement($query);
+    oci_execute($stmt);
+    $err = oci_error($stmt);
+    if ($err){
+        echo $err['message'];
+    }
+    oci_close($conn);
+}
+
+
+
+
 
 
 //$res = get_status_by_uid(42);

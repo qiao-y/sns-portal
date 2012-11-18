@@ -20,19 +20,20 @@ function get_sharing_list_by_uid($userid)
 	return $result;	
 }	
 
-/*function get_blog_by_id($bid)
+
+function insert_sharing($sh_id,$u_id,$corresponding_id,$category,$timestamp)
 {
     global $conn;
-    // get blog body
-    $query = "select * from blog where b_id = " . $bid;
-    $stmt = exec_query($query);
-
-    $row = oci_fetch_array($stmt,OCI_ASSOC);
-    $result = new blog($row["B_ID"],$row["U_ID"],$row["B_TITLE"],$row["B_BODY"],$row["B_TIMESTAMP"]);
+    $query = "insert into sharing (sh_id,u_id,sh_corresponding_id,sh_category,sh_timestamp) values ($sh_id,$u_id,$corresponding_id,$sh_category,'$timestamp')";
+    $stmt = prepare_statement($query);
+    oci_execute($stmt);
+    $err = oci_error($stmt);
+    if ($err){
+        echo $err['message'];
+    }
     oci_close($conn);
-    return $result;
 }
-*/
+
 
 
 //$list = get_sharing_list_by_uid(41);

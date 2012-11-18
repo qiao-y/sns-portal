@@ -44,6 +44,19 @@ function get_picture_by_pid($pid)
     return $result;
 }
 
+function insert_picture($p_id,$p_link,$u_id,$desc,$timestamp)
+{
+    global $conn;
+    $query = "insert into picture (p_id,p_body_link,u_id,p_timestamp,p_description) values ($p_id,'$p_link',$u_id,'$timestamp','$desc')";
+    $stmt = prepare_statement($query);
+    oci_execute($stmt);
+    $err = oci_error($stmt);
+    if ($err){
+        echo $err['message'];
+    }
+    oci_close($conn);
+}
+
 
 
 

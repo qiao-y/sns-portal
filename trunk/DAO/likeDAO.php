@@ -99,6 +99,62 @@ function get_like_sharing_users_by_shid($shid)
 }
 
 
+function insert_like_picture($p_id,$u_id,$timestamp)
+{
+    global $conn;
+    $query = "insert into like_picture (p_id,lp_timestamp,u_id) values ($p_id,'$timestamp',$u_id)";
+    $stmt = prepare_statement($query);
+    oci_execute($stmt);
+    $err = oci_error($stmt);
+    if ($err){
+        echo $err['message'];
+    }
+    oci_close($conn);
+}
+
+
+function insert_like_status($s_id,$u_id,$timestamp)
+{
+    global $conn;
+    $query = "insert into like_status (s_id,ls_timestamp,u_id) values ($s_id,'$timestamp',$u_id)";
+    $stmt = prepare_statement($query);
+    oci_execute($stmt);
+    $err = oci_error($stmt);
+    if ($err){
+        echo $err['message'];
+    }
+    oci_close($conn);
+}
+
+
+function insert_like_blog($b_id,$u_id,$timestamp)
+{
+    global $conn;
+    $query = "insert into like_blog (b_id,lb_timestamp,u_id) values ($b_id,'$timestamp',$u_id)";
+    $stmt = prepare_statement($query);
+    oci_execute($stmt);
+    $err = oci_error($stmt);
+    if ($err){
+        echo $err['message'];
+    }
+    oci_close($conn);
+}
+
+
+function insert_like_sharing($sh_id,$u_id,$timestamp)
+{
+    global $conn;
+    $query = "insert into like_picture (sh_id,ls_timestamp,u_id) values ($sh_id,'$timestamp',$u_id)";
+    $stmt = prepare_statement($query);
+    oci_execute($stmt);
+    $err = oci_error($stmt);
+    if ($err){
+        echo $err['message'];
+    }
+    oci_close($conn);
+}
+
+
 
 
 //var_dump(get_blog_title_by_id(2));
