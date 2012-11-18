@@ -36,6 +36,22 @@ function get_status_by_sid($sid)
 }   
 
 
+function insert_status($s_id,$s_content,$uid,$timestamp)
+{
+    global $conn;
+    $query = "insert into status (s_id,s_content,s_timestamp,u_id) values ($s_id,'$s_content','$timestamp',$uid)";
+    $stmt = prepare_statement($query);
+    oci_execute($stmt);
+    $err = oci_error($stmt);
+    if ($err){
+        echo $err['message'];
+    }
+    oci_close($conn);
+}       
+
+
+
+
 
 //$res = get_status_by_uid(42);
 //var_dump($res);
