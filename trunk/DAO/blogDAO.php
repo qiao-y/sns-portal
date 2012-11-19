@@ -71,7 +71,7 @@ function get_blog_comment_by_bid($bid)
 function insert_blog($b_id,$u_id,$b_title,$b_body,$b_timestamp)
 {
 	global $conn;
-	$query = "insert into blog (b_id,u_id,b_title,b_body) values ($b_id,$u_id,'$b_title','$b_body')";
+	$query = "insert into blog (b_id,u_id,b_title,b_body,b_timestamp) values ($b_id,$u_id,'$b_title','$b_body','$b_timestamp')";
 	$stmt = prepare_statement($query);
 	oci_execute($stmt);
 	$err = oci_error($stmt);
