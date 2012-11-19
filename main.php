@@ -72,7 +72,7 @@
 							$blog_list = get_blog_list_by_uid($friend_id);
 							for ($i = 0 ; $i < count($blog_list) ; ++$i){
 							?>
-							<a href="readblog.php?bid=<?php echo $blog_list[$i]->bid; ?>"style="background-color:rgb(56,69,138)"><?php echo $blog_list[$i]->title; ?></a>  <br/>
+							<a href="readblog.php?bid=<?php echo $blog_list[$i]->bid; ?>"style="color:white; background-color:rgb(56,69,138)"><?php echo $blog_list[$i]->title; ?></a>  <br/>
 						<?php	
 							} 					
 						?>	
@@ -88,7 +88,7 @@
                             $status_list = get_status_by_uid($friend_id);
                             for ($i = 0 ; $i < count($status_list) ; ++$i){
                             ?>      
-                            <a href="status.php?friendid=<?php echo $friend_id ?>&sid=<?php echo $status_list[$i]->sid ?>"style="background-color:rgb(56,69,138)"><?php echo $status_list[$i]->content; ?></a> <br/>
+                            <a href="status.php?friendid=<?php echo $friend_id ?>&sid=<?php echo $status_list[$i]->sid ?>"style="color:white; background-color:rgb(56,69,138)"><?php echo $status_list[$i]->content; ?></a> <br/>
                         <?php 
                             }                   
                         ?>  
@@ -103,7 +103,7 @@
                             $tweet_list = get_tweet_by_uid($friend_id);
                             for ($i = 0 ; $i < count($tweet_list) ; ++$i){
                             ?>
-                            <font style="background-color:rgb(128,179,212)"><?php echo $tweet_list[$i]->content; ?></font> 
+                            <font style="background-color:rgb(128,179,212)"><?php echo $tweet_list[$i]->content; ?></font><br/> 
                         <?php
                             }
                         ?>
