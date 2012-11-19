@@ -35,11 +35,26 @@ function is_friend($uid1,$uid2)
 }
 
 
+function add_friend_with_ts($uid1,$uid2,$ts)
+{
+    global $conn;
+    $query = "INSERT INTO user_friend (u_id1,u_id2,f_since) VALUES ($uid1,$uid2,'$ts')";
+    $stmt = exec_query($query);
+    oci_close($conn);
+    if ($stmt == NULL){
+        return false;
+    }
+    else {
+        return true;
+    }
+}
+
+
 
 function add_friend($uid1,$uid2)
 {
 	global $conn;
-	$query = "INSERT INTO user_friend (u_id1,u_id2) VALUES (" . $uid1 . ", " . $uid2 . ")";
+	$query = "INSERT INTO user_friend  (u_id1,u_id2) VALUES (" . $uid1 . ", " . $uid2 . ")";
 	$stmt = exec_query($query);
 	oci_close($conn);
 	if ($stmt == NULL){

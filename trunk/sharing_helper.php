@@ -13,11 +13,11 @@ function output_sharing($item,$friendid)
 	$username = get_user_name_by_id($friendid);
 	if ($item->category == 1){
 		$blog_title = get_blog_title_by_id($item->correspondingid); 
-		return "$username shared a <strong>blog</strong>: <a href=\"readblog.php?bid=$item->correspondingid\" style=\"background-color:rgb(56,69,138)\">$blog_title</a><br/>";
+		return "$username shared a <strong>blog</strong>: <a href=\"readblog.php?bid=$item->correspondingid\" style=\"color:white;background-color:rgb(56,69,138)\">$blog_title</a><br/>";
 	}
 	else if ($item->category == 2){
 		$status = get_status_by_sid($item->correspondingid)->content;
-		return "$username shared a <strong>status</strong>: <a href=\"status.php?friendid=$friendid&sid=$item->correspondingid\"  style=\"background-color:rgb(56,69,138)\">$status</a><br/>";
+		return "$username shared a <strong>status</strong>: <a href=\"status.php?friendid=$friendid&sid=$item->correspondingid\"  style=\"color:white;background-color:rgb(56,69,138)\">$status</a><br/>";
 	}
 	else if ($item->category == 3){
 		$link = get_picture_by_pid($item->correspondingid)->link; 
