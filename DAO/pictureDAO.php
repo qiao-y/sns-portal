@@ -47,7 +47,7 @@ function get_picture_by_pid($pid)
 function insert_picture($p_id,$p_link,$u_id,$desc,$timestamp)
 {
     global $conn;
-    $query = "insert into picture (p_id,p_body_link,u_id,p_timestamp,p_description) values ($p_id,'$p_link',$u_id,'$timestamp','$desc')";
+    $query = "insert into pictures (p_id,p_body_link,u_id,p_timestamp,p_description) values ($p_id,'$p_link',$u_id,'$timestamp','$desc')";
     $stmt = prepare_statement($query);
     oci_execute($stmt);
     $err = oci_error($stmt);
@@ -57,6 +57,9 @@ function insert_picture($p_id,$p_link,$u_id,$desc,$timestamp)
     oci_close($conn);
 }
 
+
+
+//insert_picture(101,'http://www.columbia.edu/files/columbia/imagecache/gallery/gallery/now-dig-this-h',41,"test",'14-NOV-12 08.20.45.123117 PM');
 
 
 

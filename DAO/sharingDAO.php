@@ -24,7 +24,7 @@ function get_sharing_list_by_uid($userid)
 function insert_sharing($sh_id,$u_id,$corresponding_id,$category,$timestamp)
 {
     global $conn;
-    $query = "insert into sharing (sh_id,u_id,sh_corresponding_id,sh_category,sh_timestamp) values ($sh_id,$u_id,$corresponding_id,$sh_category,'$timestamp')";
+    $query = "insert into sharing (sh_id,u_id,sh_corresponding_id,sh_category,sh_timestamp) values ($sh_id,$u_id,$corresponding_id,$category,'$timestamp')";
     $stmt = prepare_statement($query);
     oci_execute($stmt);
     $err = oci_error($stmt);
@@ -34,6 +34,8 @@ function insert_sharing($sh_id,$u_id,$corresponding_id,$category,$timestamp)
     oci_close($conn);
 }
 
+
+//insert_sharing(101,41,101,1,'14-NOV-12 08.20.45.123117 PM');
 
 
 //$list = get_sharing_list_by_uid(41);
