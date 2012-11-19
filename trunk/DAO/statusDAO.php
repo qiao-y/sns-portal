@@ -50,6 +50,7 @@ function insert_status($s_id,$s_content,$uid,$timestamp)
 }       
 
 
+//insert_status(101,"test",41,'14-NOV-12 08.20.45.123117 PM');
 
 
 

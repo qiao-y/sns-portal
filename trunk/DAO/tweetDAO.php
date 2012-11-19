@@ -49,7 +49,7 @@ function insert_tweet($t_id,$t_content,$t_timestamp,$u_id)
 }
 
 
-
+//insert_tweet(101,'hello','14-NOV-12 08.20.45.123117 PM',41);
 
 
 
