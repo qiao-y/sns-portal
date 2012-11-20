@@ -25,11 +25,11 @@ function insert_sharing($sh_id,$u_id,$corresponding_id,$category,$timestamp)
 {
     global $conn;
     $query = "insert into sharing (sh_id,u_id,sh_corresponding_id,sh_category,sh_timestamp) values ($sh_id,$u_id,$corresponding_id,$category,'$timestamp')";
-    $stmt = prepare_statement($query);
+	$stmt = prepare_statement($query);
     oci_execute($stmt);
     $err = oci_error($stmt);
     if ($err){
-        echo $err['message'];
+//        echo $err['message'];
     }
     oci_close($conn);
 }

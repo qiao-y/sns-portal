@@ -3,12 +3,29 @@ require_once "common.php";
 $root = realpath($_SERVER["DOCUMENT_ROOT"]);
 require_once "$root/Models/user.php";
 
+function get_max_uid()
+{
+    global $conn;
+	$query = "select max (u_id) as TEMP from users";
+    $stmt = prepare_statement($query);
+    oci_execute($stmt);
+	if (oci_fetch_all($stmt,$res) == 0){
+        oci_close($conn);
+        return 10000;
+    }
+    else{
+        oci_close($conn);
+		return $res["TEMP"][0];
+    }
+}
+
 
 function register_user($user_name,$email,$password)
 {
 	global $conn;
 	$md5_password = md5($password);
-	$query = "INSERT INTO Users(u_name, u_email, u_password)  VALUES (:user_name,:email,:md5_password)";
+	$uid = get_max_uid() + 1;
+	$query = "INSERT INTO Users(u_id, u_name, u_email, u_password)  VALUES ($uid, :user_name,:email,:md5_password)";
 	
 	$stmt = prepare_statement($query);
 
@@ -20,7 +37,7 @@ function register_user($user_name,$email,$password)
 
 	$err = oci_error($stmt);
 	if ($err){
-		echo $err['message'];
+//		echo $err['message'];
 	}
 	oci_close($conn);
 }
@@ -93,6 +110,8 @@ function search_user($keyword)
 }
 
 
+
+//echo get_max_uid();
 
 // register_user("newuser","zizi@gmail.com","haha");
 // echo check_password("zizi@gmail.com","haha");

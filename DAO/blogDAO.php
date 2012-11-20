@@ -72,6 +72,8 @@ function insert_blog($b_id,$u_id,$b_title,$b_body,$b_timestamp)
 {
 	global $conn;
 	$query = "insert into blog (b_id,u_id,b_title,b_body,b_timestamp) values ($b_id,$u_id,'$b_title','$b_body','$b_timestamp')";
+//	echo "<br/><br/><p>$query</p><br/><br/>";
+
 	$stmt = prepare_statement($query);
 	oci_execute($stmt);
 	$err = oci_error($stmt);
