@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<like_blog_data>
+<like_blog>
+		<blog_id>164</blog_id>
+		<u_id>129</u_id>
+		<timestamp>1244915</timestamp>
+	</like_blog>
+	<like_blog>
+		<blog_id>184</blog_id>
+		<u_id>129</u_id>
+		<timestamp>2066214</timestamp>
+	</like_blog>
+	<like_blog>
+		<blog_id>201</blog_id>
+		<u_id>129</u_id>
+		<timestamp>2394304</timestamp>
+	</like_blog>
+	<like_blog>
+		<blog_id>207</blog_id>
+		<u_id>129</u_id>
+		<timestamp>2752599</timestamp>
+	</like_blog>
+	<like_blog>
+		<blog_id>219</blog_id>
+		<u_id>129</u_id>
+		<timestamp>3989738</timestamp>
+	</like_blog>
+</like_blog_data>

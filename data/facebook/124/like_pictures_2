@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<like_picture_data>
+<like_pic>
+		<p_id>42</p_id>
+		<u_id>124</u_id>
+		<timestamp>262770</timestamp>
+	</like_pic>
+	<like_pic>
+		<p_id>45</p_id>
+		<u_id>124</u_id>
+		<timestamp>813153</timestamp>
+	</like_pic>
+	<like_pic>
+		<p_id>60</p_id>
+		<u_id>124</u_id>
+		<timestamp>2912444</timestamp>
+	</like_pic>
+</like_picture_data>

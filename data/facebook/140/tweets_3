@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<tweet_data>
+<tweet>
+		<cid>
+2336</cid>
+		<uid>
+140</uid>
+		<s_content>
+
+"I believe that you are a wizard, Mr.</s_content>
+		<timestamp>1630000</timestamp>
+	</tweet>
+	<tweet>
+		<cid>
+2337</cid>
+		<uid>
+140</uid>
+		<s_content> Holmes.</s_content>
+		<timestamp>1696582</timestamp>
+	</tweet>
+	<tweet>
+		<cid>
+2338</cid>
+		<uid>
+140</uid>
+		<s_content> I really do sometimes
+think that you have powers that are not human.</s_content>
+		<timestamp>1764130</timestamp>
+	</tweet>
+	<tweet>
+		<cid>
+2339</cid>
+		<uid>
+140</uid>
+		<s_content> Now, how on earth could
+you know that the stolen silver was at the bottom of that pond?"
+
+"I didn't know it.</s_content>
+		<timestamp>1806872</timestamp>
+	</tweet>
+	<tweet>
+		<cid>
+2340</cid>
+		<uid>
+140</uid>
+		<s_content>"
+
+"But you told me to examine it.</s_content>
+		<timestamp>1844260</timestamp>
+	</tweet>
+	<tweet>
+		<cid>
+2341</cid>
+		<uid>
+140</uid>
+		<s_content>"
+
+"You got it, then?"
+
+"Yes, I got it.</s_content>
+		<timestamp>1914862</timestamp>
+	</tweet>
+	<tweet>
+		<cid>
+2342</cid>
+		<uid>
+140</uid>
+		<s_content>"
+
+"I am very glad if I have helped you.</s_content>
+		<timestamp>1956152</timestamp>
+	</tweet>
+	<tweet>
+		<cid>
+2343</cid>
+		<uid>
+140</uid>
+		<s_content>"
+
+"But you haven't helped me.</s_content>
+		<timestamp>1997421</timestamp>
+	</tweet>
+	<tweet>
+		<cid>
+2344</cid>
+		<uid>
+140</uid>
+		<s_content> You have made the affair far more difficult.</s_content>
+		<timestamp>2059511</timestamp>
+	</tweet>
+</tweet_data>

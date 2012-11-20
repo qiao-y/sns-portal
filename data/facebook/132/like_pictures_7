@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<like_picture_data>
+<like_pic>
+		<p_id>282</p_id>
+		<u_id>132</u_id>
+		<timestamp>3855334</timestamp>
+	</like_pic>
+	<like_pic>
+		<p_id>304</p_id>
+		<u_id>132</u_id>
+		<timestamp>2289586</timestamp>
+	</like_pic>
+	<like_pic>
+		<p_id>344</p_id>
+		<u_id>132</u_id>
+		<timestamp>2811401</timestamp>
+	</like_pic>
+	<like_pic>
+		<p_id>372</p_id>
+		<u_id>132</u_id>
+		<timestamp>1876917</timestamp>
+	</like_pic>
+	<like_pic>
+		<p_id>413</p_id>
+		<u_id>132</u_id>
+		<timestamp>3285094</timestamp>
+	</like_pic>
+	<like_pic>
+		<p_id>451</p_id>
+		<u_id>132</u_id>
+		<timestamp>3927227</timestamp>
+	</like_pic>
+	<like_pic>
+		<p_id>465</p_id>
+		<u_id>132</u_id>
+		<timestamp>895675</timestamp>
+	</like_pic>
+	<like_pic>
+		<p_id>479</p_id>
+		<u_id>132</u_id>
+		<timestamp>2611083</timestamp>
+	</like_pic>
+	<like_pic>
+		<p_id>513</p_id>
+		<u_id>132</u_id>
+		<timestamp>2435263</timestamp>
+	</like_pic>
+	<like_pic>
+		<p_id>560</p_id>
+		<u_id>132</u_id>
+		<timestamp>5171357</timestamp>
+	</like_pic>
+</like_picture_data>

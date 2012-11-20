@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<sharing_data>
+<share>
+		<cid>3790</cid>
+		<u_id>123</u_id>
+		<sharing_category>album
+</sharing_category>
+		<sharing_correspoding_id>77</sharing_correspoding_id>		<timestamp>243325</timestamp>
+	</share>
+	<share>
+		<cid>3791</cid>
+		<u_id>123</u_id>
+		<sharing_category>picture
+</sharing_category>
+		<sharing_correspoding_id>553</sharing_correspoding_id>		<timestamp>3986644</timestamp>
+	</share>
+</sharing_data>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<album_data>
+
+	<album>
+		<cid>36</cid>
+		<al_uid>114</al_uid>
+		<al_description>
+"
+
+"You'll come with me to-night?"
+
+"When you like and where you like."
+
+"This is, indeed, like the old days.We shall have time for a mouthful
+of dinner before we need go.		</al_description>
+		<timestamp>509038</timestamp>
+	</album>
+	<album>
+		<cid>37</cid>
+		<al_uid>114</al_uid>
+		<al_description>
+Well, then, about that chasm.I had no
+serious difficulty in getting out of it, for the very simple reason that
+I never was in it."
+
+"You never were in it?"
+
+"No, Watson, I never was in it.		</al_description>
+		<timestamp>2637060</timestamp>
+	</album>
+</album_data>

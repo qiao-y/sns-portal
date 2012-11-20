@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<like_status_data>
+<like_status>
+		<status_id>1633</status_id>
+		<u_id>141</u_id>
+		<timestamp>314887</timestamp>
+	</like_status>
+	<like_status>
+		<status_id>1638</status_id>
+		<u_id>141</u_id>
+		<timestamp>563317</timestamp>
+	</like_status>
+	<like_status>
+		<status_id>1867</status_id>
+		<u_id>141</u_id>
+		<timestamp>2364931</timestamp>
+	</like_status>
+	<like_status>
+		<status_id>2115</status_id>
+		<u_id>141</u_id>
+		<timestamp>256457</timestamp>
+	</like_status>
+	<like_status>
+		<status_id>2189</status_id>
+		<u_id>141</u_id>
+		<timestamp>4163967</timestamp>
+	</like_status>
+</like_status_data>

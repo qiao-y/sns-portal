@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<like_share_data>
+<like_share>
+		<sharing_id>1474</sharing_id>
+		<user_id>109</user_id>
+		<timestamp>562224</timestamp>
+	</like_share>
+	<like_share>
+		<sharing_id>1670</sharing_id>
+		<user_id>109</user_id>
+		<timestamp>877226</timestamp>
+	</like_share>
+	<like_share>
+		<sharing_id>1847</sharing_id>
+		<user_id>109</user_id>
+		<timestamp>851184</timestamp>
+	</like_share>
+	<like_share>
+		<sharing_id>2033</sharing_id>
+		<user_id>109</user_id>
+		<timestamp>2706960</timestamp>
+	</like_share>
+	<like_share>
+		<sharing_id>2046</sharing_id>
+		<user_id>109</user_id>
+		<timestamp>1949614</timestamp>
+	</like_share>
+	<like_share>
+		<sharing_id>2119</sharing_id>
+		<user_id>109</user_id>
+		<timestamp>4051425</timestamp>
+	</like_share>
+</like_share_data>

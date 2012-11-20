@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<picture_data>
+<picture>
+		<cid>917</cid>
+		<u_id>127</u_id>
+		<p_description>
+"Would you kindly send one of your constables for two buckets of water?
+Put the straw on the floor here, free from the wall on either side.		</p_description>
+		<height></height>
+		<width></width>
+		<URI></URI>
+		<al_id></al_id>
+		<timestamp>2856247</timestamp>
+	</picture>
+	<picture>
+		<cid>918</cid>
+		<u_id>127</u_id>
+		<p_description>
+Now
+I think that we are all ready.		</p_description>
+		<height></height>
+		<width></width>
+		<URI></URI>
+		<al_id></al_id>
+		<timestamp>3092855</timestamp>
+	</picture>
+</picture_data>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<sharing_data>
+<share>
+		<cid>6029</cid>
+		<u_id>136</u_id>
+		<sharing_category>status
+</sharing_category>
+		<sharing_correspoding_id>744</sharing_correspoding_id>		<timestamp>4224206</timestamp>
+	</share>
+	<share>
+		<cid>6030</cid>
+		<u_id>136</u_id>
+		<sharing_category>blog
+</sharing_category>
+		<sharing_correspoding_id>43</sharing_correspoding_id>		<timestamp>2871035</timestamp>
+	</share>
+	<share>
+		<cid>6031</cid>
+		<u_id>136</u_id>
+		<sharing_category>album
+</sharing_category>
+		<sharing_correspoding_id>70</sharing_correspoding_id>		<timestamp>5059672</timestamp>
+	</share>
+</sharing_data>
