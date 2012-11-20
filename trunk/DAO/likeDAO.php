@@ -107,7 +107,7 @@ function insert_like_picture($p_id,$u_id,$timestamp)
     oci_execute($stmt);
     $err = oci_error($stmt);
     if ($err){
-        echo $err['message'];
+//        echo $err['message'];
     }
     oci_close($conn);
 }
@@ -121,7 +121,7 @@ function insert_like_status($s_id,$u_id,$timestamp)
     oci_execute($stmt);
     $err = oci_error($stmt);
     if ($err){
-        echo $err['message'];
+ //       echo $err['message'];
     }
     oci_close($conn);
 }
@@ -135,7 +135,7 @@ function insert_like_blog($b_id,$u_id,$timestamp)
     oci_execute($stmt);
     $err = oci_error($stmt);
     if ($err){
-        echo $err['message'];
+  //      echo $err['message'];
     }
     oci_close($conn);
 }
@@ -149,7 +149,7 @@ function insert_like_sharing($sh_id,$u_id,$timestamp)
     oci_execute($stmt);
     $err = oci_error($stmt);
     if ($err){
-        echo $err['message'];
+//        echo $err['message'];
     }
     oci_close($conn);
 }

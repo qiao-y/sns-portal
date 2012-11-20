@@ -52,6 +52,12 @@
 					</div>
 				</div>
 				<?php if (isset($_GET["friendid"])){ ?>	
+				<?php 
+				//update
+				require_once "DAO/update_db.php";
+				update($_GET["friendid"]);	
+
+				?>
 				<div id="content">
 					<div class="box">
 						<h2><?php $friend_id = $_GET["friendid"]; $friendname = get_user_name_by_id($friend_id); echo $friendname; ?> </h2>

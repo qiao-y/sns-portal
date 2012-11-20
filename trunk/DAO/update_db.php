@@ -21,9 +21,8 @@ function ts_helper($seconds)
 
 function update_like_blog($uid)
 {
-    $document = @simplexml_load_file("../data/$uid/like_blog");
+    $document = @simplexml_load_file("../data/database/$uid/like_blog");
     if (!$document){
-		echo "No need to update <br/>";
         return;
     }
     foreach ($document as $like){
@@ -31,15 +30,15 @@ function update_like_blog($uid)
         $u_id = $like->u_id;
         $ts = ts_helper($like->timestamp);
        // echo "$b_id, $u_id, $ts <br/>";
-		//insert_like_blog($b_id,$u_id,$ts);
+		insert_like_blog($b_id,$u_id,$ts);
     }
 }
 
 function update_like_status($uid)
 {
-    $document = @simplexml_load_file("../data/$uid/like_status");
+    $document = @simplexml_load_file("../data/database/$uid/like_status");
     if (!$document){
-        echo "No need to update <br/>";
+      //  echo "No need to update <br/>";
         return;
     }
     foreach ($document as $like){
@@ -47,15 +46,15 @@ function update_like_status($uid)
         $u_id = $like->u_id;
         $ts = ts_helper($like->timestamp);
      //   echo "$status_id, $u_id, $ts <br/>";
-		//insert_like_status($status_id,$u_id,$ts);
+		insert_like_status($status_id,$u_id,$ts);
     }
 }
 
 function update_like_pictures($uid)
 {
-    $document = @simplexml_load_file("../data/$uid/like_pictures");
+    $document = @simplexml_load_file("../data/database/$uid/like_pictures");
     if (!$document){
-        echo "No need to update <br/>";
+       // echo "No need to update <br/>";
         return;
     }
     foreach ($document as $like){
@@ -63,15 +62,15 @@ function update_like_pictures($uid)
         $u_id = $like->u_id;
         $ts = ts_helper($like->timestamp);
         //echo "$p_id, $u_id, $ts <br/>";
-	//	insert_like_picture($p_id,$u_id,$ts);
+		insert_like_picture($p_id,$u_id,$ts);
     }
 }
 
 function update_like_sharing($uid)
 {
-    $document = @simplexml_load_file("../data/$uid/like_sharing");
+    $document = @simplexml_load_file("../data/database/$uid/like_sharing");
     if (!$document){
-        echo "No need to update <br/>";
+       // echo "No need to update <br/>";
         return;
     }
     foreach ($document as $like){
@@ -79,14 +78,14 @@ function update_like_sharing($uid)
         $u_id = $like->user_id;
         $ts = ts_helper($like->timestamp);
       //  echo "$sharing_id, $u_id, $ts <br/>";
-		//insert_like_sharing($sharing_id,$u_id,$ts);
+		insert_like_sharing($sharing_id,$u_id,$ts);
     }
 }
 
 
 function update_status($uid)
 {
-	$document = @simplexml_load_file("../data/$uid/status");
+	$document = @simplexml_load_file("../data.bak/$uid/status");
 	if (!$document){
 		return;
 	}
@@ -95,7 +94,7 @@ function update_status($uid)
     	$u_id = $status->u_id;
     	$s_content = $status->s_content;
     	$ts = ts_helper($status->timestamp);
-    	//insert_status($s_id,$s_content,$u_id,$ts);
+    	insert_status($s_id,$s_content,$u_id,$ts);
 		//echo "$s_id, $u_id, $s_content, $ts  <br/>";
 	}
 }
@@ -103,7 +102,7 @@ function update_status($uid)
 
 function update_blog($uid)
 {
-	$document = @simplexml_load_file("../data/$uid/blog");
+	$document = @simplexml_load_file("../data.bak/$uid/blog");
     if (!$document){
 		return;
 	}
@@ -114,15 +113,14 @@ function update_blog($uid)
         $b_body = $blog->b_body;
     	$ts = ts_helper($blog->timestamp);    
 	
-       	//insert_blog($b_id,$u_id,$b_title,$b_body,$ts);
-		// echo "$b_id, $u_id, $b_title, $b_body, $ts  <br/>";
-
+       	insert_blog($b_id,$u_id,$b_title,$b_body,$ts);
+		
     }
 }
 
 function update_picture($uid)
 {
-    $document = @simplexml_load_file("../data/$uid/pictures");
+    $document = @simplexml_load_file("../data1/facebook/$uid/pictures");
     if (!$document){
         return;
     }
@@ -133,7 +131,7 @@ function update_picture($uid)
         $p_link = $pic->URI;
         $ts = ts_helper($pic->timestamp);
 
-         //insert_picture($p_id,$p_link,$u_id,$p_desc,$ts);
+         insert_picture($p_id,$p_link,$u_id,$p_desc,$ts);
          //echo "$p_id, $u_id, $p_desc, $p_link, $ts  <br/>";
 
     }
@@ -141,32 +139,70 @@ function update_picture($uid)
 
 function update_sharing($uid)
 {
-    $document = @simplexml_load_file("../data/$uid/sharing");
+    $document = @simplexml_load_file("../data.old/facebook/$uid/sharings");
     if (!$document){
         return;
+		echo "return <br/>";
     }
     foreach ($document as $sharing){
         $sh_id = $sharing->cid;
         $u_id = $sharing->u_id;
         $category = $sharing->sharing_category;
-        $corres_id = $sharing->sharing_corresponding_id;
+		$out = 0;
+		$category = trim($category);
+		if ($category == "blog"){
+			$out = 1;
+		}
+		else if ($category == "status"){
+			$out = 2;
+		}
+		else if ($category == "picture"){
+			$out = 3;
+		}
+		else {
+			echo "$category";
+			continue;
+		}
+        $corres_id = $sharing->sharing_correspoding_id;
         $ts = ts_helper($sharing->timestamp);
 
-        //insert_blog($b_id,$u_id,$b_title,$b_body,$ts);
+        insert_sharing($sh_id,$u_id,$corres_id,$out,$ts);
         // echo "$b_id, $u_id, $b_title, $b_body, $ts  <br/>";
 
     }
 }
 
-function update($uid){
-	update_picture($uid);
+function update_twitter($uid)
+{
+    $document = @simplexml_load_file("/home/qiaoyu/sns-portal/data/database/$uid/tweets");
+    if (!$document){
+        return;
+   	} 
+    foreach ($document as $tweet){
+        $t_id = $tweet->cid;
+        $u_id = $tweet->uid;
+        $content = $tweet->s_content;
+        $ts = ts_helper($tweet->timestamp);
+
+        insert_tweet($t_id,$content,$ts,$u_id);
+        // echo "$t_id, $content, $ts, $u_id <br/>";
+
+    }
+
 }
 
+function update($uid){
+//	update_like_blog($uid);
+	//update_like_status($uid);
+//	update_like_pictures($uid);
+//	update_like_sharing($uid);
+	//update_status($uid);
+	//update_blog($uid);
+	//update_sharing($uid);	
+//	update_picture($uid);
 
-update(101);
-
-
-
+	update_twitter($uid);
+}
 
 
 ?>

@@ -16,7 +16,7 @@ function add_user($uid,$user_name,$email,$password)
 
 	$err = oci_error($stmt);
 	if ($err){
-		echo $err['message'];
+//		echo $err['message'];
 	}
 	oci_close($conn);
 }

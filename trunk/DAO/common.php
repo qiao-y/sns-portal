@@ -23,8 +23,8 @@ function exec_query($query)
 
     $err = oci_error($stmt);
     if ($err){
-		echo "error while exec ". $query ."<br/>";
-        echo $err['message'];
+//		echo "error while exec ". $query ."<br/>";
+//        echo $err['message'];
 		oci_free_statement($stmt);
 		$nrows = 0;
 		return NULL;
