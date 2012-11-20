@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<tweet_data>
+<tweet>
+		<cid>
+152</cid>
+		<uid>
+117</uid>
+		<s_content> They are all sold now.</s_content>
+		<timestamp>3080808</timestamp>
+	</tweet>
+	<tweet>
+		<cid>
+153</cid>
+		<uid>
+117</uid>
+		<s_content> To whom? Oh, I daresay by consulting our
+sales book we could very easily tell you.</s_content>
+		<timestamp>3139981</timestamp>
+	</tweet>
+	<tweet>
+		<cid>
+154</cid>
+		<uid>
+117</uid>
+		<s_content> Yes, we have the entries here.</s_content>
+		<timestamp>3200496</timestamp>
+	</tweet>
+	<tweet>
+		<cid>
+155</cid>
+		<uid>
+117</uid>
+		<s_content>
+One to Mr.</s_content>
+		<timestamp>3265640</timestamp>
+	</tweet>
+	<tweet>
+		<cid>
+156</cid>
+		<uid>
+117</uid>
+		<s_content> Harker you see, and one to Mr.</s_content>
+		<timestamp>3324916</timestamp>
+	</tweet>
+	<tweet>
+		<cid>
+157</cid>
+		<uid>
+117</uid>
+		<s_content> Josiah Brown, of Laburnum
+Lodge, Laburnum Vale, Chiswick, and one to Mr.</s_content>
+		<timestamp>3381343</timestamp>
+	</tweet>
+	<tweet>
+		<cid>
+158</cid>
+		<uid>
+117</uid>
+		<s_content> Sandeford, of Lower Grove
+Road, Reading.</s_content>
+		<timestamp>3425868</timestamp>
+	</tweet>
+	<tweet>
+		<cid>
+159</cid>
+		<uid>
+117</uid>
+		<s_content> No, I have never seen this face which you show me in the
+photograph.</s_content>
+		<timestamp>3469100</timestamp>
+	</tweet>
+	<tweet>
+		<cid>
+160</cid>
+		<uid>
+117</uid>
+		<s_content> You would hardly forget it, would you, sir, for I've seldom
+seen an uglier.</s_content>
+		<timestamp>3510152</timestamp>
+	</tweet>
+</tweet_data>

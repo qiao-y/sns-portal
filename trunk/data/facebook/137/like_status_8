@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<like_status_data>
+<like_status>
+		<status_id>1779</status_id>
+		<u_id>137</u_id>
+		<timestamp>2863355</timestamp>
+	</like_status>
+	<like_status>
+		<status_id>2054</status_id>
+		<u_id>137</u_id>
+		<timestamp>2144109</timestamp>
+	</like_status>
+	<like_status>
+		<status_id>2206</status_id>
+		<u_id>137</u_id>
+		<timestamp>5117395</timestamp>
+	</like_status>
+</like_status_data>

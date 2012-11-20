@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<like_blog_data>
+<like_blog>
+		<blog_id>126</blog_id>
+		<u_id>133</u_id>
+		<timestamp>2135552</timestamp>
+	</like_blog>
+	<like_blog>
+		<blog_id>137</blog_id>
+		<u_id>133</u_id>
+		<timestamp>816225</timestamp>
+	</like_blog>
+	<like_blog>
+		<blog_id>141</blog_id>
+		<u_id>133</u_id>
+		<timestamp>72418</timestamp>
+	</like_blog>
+	<like_blog>
+		<blog_id>152</blog_id>
+		<u_id>133</u_id>
+		<timestamp>1024631</timestamp>
+	</like_blog>
+	<like_blog>
+		<blog_id>163</blog_id>
+		<u_id>133</u_id>
+		<timestamp>603049</timestamp>
+	</like_blog>
+	<like_blog>
+		<blog_id>163</blog_id>
+		<u_id>133</u_id>
+		<timestamp>620225</timestamp>
+	</like_blog>
+	<like_blog>
+		<blog_id>171</blog_id>
+		<u_id>133</u_id>
+		<timestamp>1480162</timestamp>
+	</like_blog>
+	<like_blog>
+		<blog_id>185</blog_id>
+		<u_id>133</u_id>
+		<timestamp>2557015</timestamp>
+	</like_blog>
+	<like_blog>
+		<blog_id>190</blog_id>
+		<u_id>133</u_id>
+		<timestamp>1217745</timestamp>
+	</like_blog>
+	<like_blog>
+		<blog_id>193</blog_id>
+		<u_id>133</u_id>
+		<timestamp>4760310</timestamp>
+	</like_blog>
+</like_blog_data>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<like_blog_data>
+<like_blog>
+		<blog_id>119</blog_id>
+		<u_id>142</u_id>
+		<timestamp>124846</timestamp>
+	</like_blog>
+	<like_blog>
+		<blog_id>152</blog_id>
+		<u_id>142</u_id>
+		<timestamp>1071575</timestamp>
+	</like_blog>
+	<like_blog>
+		<blog_id>173</blog_id>
+		<u_id>142</u_id>
+		<timestamp>2721066</timestamp>
+	</like_blog>
+</like_blog_data>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<sharing_data>
+<share>
+		<cid>1845</cid>
+		<u_id>112</u_id>
+		<sharing_category>album
+</sharing_category>
+		<sharing_correspoding_id>63</sharing_correspoding_id>		<timestamp>2852234</timestamp>
+	</share>
+	<share>
+		<cid>1846</cid>
+		<u_id>112</u_id>
+		<sharing_category>blog
+</sharing_category>
+		<sharing_correspoding_id>182</sharing_correspoding_id>		<timestamp>20227</timestamp>
+	</share>
+	<share>
+		<cid>1847</cid>
+		<u_id>112</u_id>
+		<sharing_category>picture
+</sharing_category>
+		<sharing_correspoding_id>1011</sharing_correspoding_id>		<timestamp>361825</timestamp>
+	</share>
+	<share>
+		<cid>1848</cid>
+		<u_id>112</u_id>
+		<sharing_category>picture
+</sharing_category>
+		<sharing_correspoding_id>842</sharing_correspoding_id>		<timestamp>1628249</timestamp>
+	</share>
+	<share>
+		<cid>1849</cid>
+		<u_id>112</u_id>
+		<sharing_category>blog
+</sharing_category>
+		<sharing_correspoding_id>115</sharing_correspoding_id>		<timestamp>1277478</timestamp>
+	</share>
+	<share>
+		<cid>1850</cid>
+		<u_id>112</u_id>
+		<sharing_category>status
+</sharing_category>
+		<sharing_correspoding_id>1037</sharing_correspoding_id>		<timestamp>4295490</timestamp>
+	</share>
+</sharing_data>

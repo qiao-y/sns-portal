@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<like_status_data>
+<like_status>
+		<status_id>2290</status_id>
+		<u_id>115</u_id>
+		<timestamp>4262343</timestamp>
+	</like_status>
+	<like_status>
+		<status_id>2514</status_id>
+		<u_id>115</u_id>
+		<timestamp>383375</timestamp>
+	</like_status>
+	<like_status>
+		<status_id>2769</status_id>
+		<u_id>115</u_id>
+		<timestamp>3838239</timestamp>
+	</like_status>
+	<like_status>
+		<status_id>2914</status_id>
+		<u_id>115</u_id>
+		<timestamp>1296293</timestamp>
+	</like_status>
+	<like_status>
+		<status_id>3062</status_id>
+		<u_id>115</u_id>
+		<timestamp>4030562</timestamp>
+	</like_status>
+	<like_status>
+		<status_id>3205</status_id>
+		<u_id>115</u_id>
+		<timestamp>1472853</timestamp>
+	</like_status>
+	<like_status>
+		<status_id>3244</status_id>
+		<u_id>115</u_id>
+		<timestamp>3659349</timestamp>
+	</like_status>
+	<like_status>
+		<status_id>3448</status_id>
+		<u_id>115</u_id>
+		<timestamp>4275752</timestamp>
+	</like_status>
+	<like_status>
+		<status_id>3630</status_id>
+		<u_id>115</u_id>
+		<timestamp>3667587</timestamp>
+	</like_status>
+	<like_status>
+		<status_id>3755</status_id>
+		<u_id>115</u_id>
+		<timestamp>5128192</timestamp>
+	</like_status>
+</like_status_data>

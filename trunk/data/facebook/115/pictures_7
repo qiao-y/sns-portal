@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<picture_data>
+<picture>
+		<cid>523</cid>
+		<u_id>115</u_id>
+		<p_description>
+Suspicion of Murder and Arson.		</p_description>
+		<height></height>
+		<width></width>
+		<URI></URI>
+		<al_id></al_id>
+		<timestamp>3901362</timestamp>
+	</picture>
+	<picture>
+		<cid>524</cid>
+		<u_id>115</u_id>
+		<p_description>
+A Clue to the Criminal.		</p_description>
+		<height></height>
+		<width></width>
+		<URI></URI>
+		<al_id></al_id>
+		<timestamp>3949381</timestamp>
+	</picture>
+	<picture>
+		<cid>525</cid>
+		<u_id>115</u_id>
+		<p_description>
+' That is
+the clue which they are already following, Mr.		</p_description>
+		<height></height>
+		<width></width>
+		<URI></URI>
+		<al_id></al_id>
+		<timestamp>4194542</timestamp>
+	</picture>
+</picture_data>

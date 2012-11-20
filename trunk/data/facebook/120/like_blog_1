@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<like_blog_data>
+
+	<like_blog>
+		<blog_id>20</blog_id>
+		<u_id>120</u_id>
+		<timestamp>1234155</timestamp>
+	</like_blog>
+</like_blog_data>
